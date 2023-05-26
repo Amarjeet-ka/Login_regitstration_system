@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Navigation from '../components/navbar/Navbar'
 
 export default function Home() {
   return (
-     
-    <>
-   <h1> Empower Education</h1>
-    </>
+   <Fragment>
+    <Navigation />
+   </Fragment>     
 
   )
 }
