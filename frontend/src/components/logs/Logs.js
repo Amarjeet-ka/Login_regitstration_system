@@ -4,12 +4,17 @@ import Button from 'react-bootstrap/Button';
 import Tabs from 'react-bootstrap/Tabs';
 import { FormControl, InputGroup } from 'react-bootstrap';
 import { FaEnvelope, FaLock, FaGoogle } from 'react-icons/fa';
-
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 export default function Logs() {
   const [key, setKey] = useState('home');
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
+   <Container>
+    <Row><Col />
+      <Col md={4}>
+      <div style={{ justifyContent: 'center', marginTop: '150px' }}>
       <Tabs id="controlled-tab-example" activeKey={key} onSelect={(k) => setKey(k)} className="mb-3">
         <Tab eventKey="register" title="Register">
           <div style={{ marginTop: '30px' }}>
@@ -28,7 +33,7 @@ export default function Logs() {
             <Button variant="primary">Login</Button>
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
               <Button variant="light">
-                <FaGoogle /> Login with Gmail
+                <FaGoogle /> Signup with Gmail
               </Button>
             </div>
           </div>
@@ -52,7 +57,7 @@ export default function Logs() {
             </Button>
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
               <Button variant="light">
-                <FaGoogle /> Login with Gmail
+                <FaGoogle /> Signin with Gmail
               </Button>
             </div>
           </div>
@@ -72,14 +77,18 @@ export default function Logs() {
               <FormControl type="password" placeholder="Password" />
             </InputGroup>
             <Button variant="primary">Login</Button>
-            <div style={{ textAlign: 'center', marginTop: '10px' }}>
+            <div style={{  marginTop: '10px' ,textAlign:'center'}}>
               <Button variant="light">
-                <FaGoogle /> Login with Gmail
+                <FaGoogle /> Signin with Gmail
               </Button>
             </div>
           </div>
         </Tab>
       </Tabs>
     </div>
+      </Col>
+      <Col />
+    </Row>
+   </Container>
   );
 }
