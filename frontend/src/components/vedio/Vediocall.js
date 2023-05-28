@@ -51,7 +51,7 @@ function ParticipantView(props) {
           playing={true}
           url={videoStream}
           height={"300px"}
-          width={"300px"}
+          width={"500px"}
           onError={(err) => {
             console.log(err, "participant video error");
           }}

@@ -1,82 +1,100 @@
 import React from "react";
+import Alert from "react-bootstrap/Alert";
+import { FaArrowRight } from "react-icons/fa";
 
 const Homegrid = () => {
   return (
     <div
       style={{
-        textAlign: 'center',
-        marginLeft: '30%',
-        marginTop: '10%',
-        width: "300px",
-        height: "200px",
-        border: "1px solid black",
-        backgroundColor: 'gray',
+        textAlign: "center",
+        marginLeft: "10%",
+        marginTop: "10%",
+        width: "500px",
+        justifyItems: "space-between",
+        paddingTop: "30px",
+        height: "500px",
+        listStyleType: "none",
+        border: "1px solid white",
+        borderRadius: "15px",
+        backgroundColor: "#ff9e01",
         padding: "20px",
       }}
     >
-      <h3>Links:</h3>
-      <ul>
+   <Alert style={{ backgroundColor: "#43b3fb" }}>
         <li>
           <a
             href="/community"
             style={{
-              color: 'blue',
-              textDecoration: 'none',
-              fontSize: '16px',
+              color: "white",
+              textDecoration: "none",
+              fontSize: "26px",
             }}
           >
-            Community
+            Community <FaArrowRight />
           </a>
         </li>
+      </Alert>
+
+      <Alert style={{ backgroundColor: "#43b3fb" }}>
         <li>
           <a
             href="/resource"
             style={{
-              color: 'blue',
-              textDecoration: 'none',
-              fontSize: '14px',
+              color: "white",
+              textDecoration: "none",
+              fontSize: "26px",
             }}
           >
-      Resource Hub
+            Resource Hub <FaArrowRight />
           </a>
         </li>
+      </Alert>
+
+      <Alert style={{ backgroundColor: "#43b3fb" }}>
         <li>
           <a
             href="/skills"
             style={{
-              color: 'blue',
-              textDecoration: 'none',
-              fontSize: '14px',
+              color: "white",
+              textDecoration: "none",
+              fontSize: "26px",
             }}
           >
-        Skill development
+            Skill development <FaArrowRight />
           </a>
         </li>
+      </Alert>
+
+      <Alert style={{ backgroundColor: "#43b3fb" }}>
         <li>
           <a
             href="/career"
             style={{
-              color: 'blue',
-              textDecoration: 'none',
-              fontSize: '14px',
+              color: "white",
+              textDecoration: "none",
+              fontSize: "26px",
             }}
           >
-        Career Exploration
+            Career Exploration <FaArrowRight />
           </a>
         </li>
+      </Alert>
+
+      <Alert style={{ backgroundColor: "#43b3fb" }}>
         <li>
           <a
             href="/personal"
             style={{
-              color: 'blue',
-              textDecoration: 'none',
-              fontSize: '14px',
+              color: "white",
+              textDecoration: "none",
+
+              fontSize: "26px",
             }}
           >
-        Personalized learning
+            Personalized learning <FaArrowRight />
           </a>
         </li>
-      </ul>
+      </Alert>
     </div>
   );
 };

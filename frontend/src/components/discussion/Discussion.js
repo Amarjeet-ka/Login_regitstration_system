@@ -68,10 +68,10 @@ const Discussion = () => {
                 backgroundColor: "#4169e1",
                 border: "1px solid white",
                 textAlign: "center",
-                padding: "20px",
+                padding: "30px",
               }}
             >
-              <h3>What did u learn from this video?</h3>
+              <h3 style={{color:'white'}}>What did u learn from this video?</h3>
             </div>
             <div
               style={{
@@ -102,3 +102,4 @@ const Discussion = () => {
 };
 
 export default Discussion;
+ 
