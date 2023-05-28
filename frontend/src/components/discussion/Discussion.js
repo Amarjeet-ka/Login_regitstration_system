@@ -1,105 +1,59 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Vediocall from "../vedio/Vediocall";
-import Form from "react-bootstrap/Form";
+import React, { useState } from "react";
 
-const Discussion = () => {
+function Discussion() {
+  const [question, setQuestion] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Create a new object with the form data
+    const formData = {
+      question: question,
+    };
+
+    // Send the form data to the backend
+    fetch("/api/submitQuestion", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Request failed with status: " + response.status);
+        }
+      })
+      .then((data) => {
+        console.log(data); // Optional: Log the response from the backend
+        // Reset the form after successful submission
+        setQuestion("");
+      })
+      .catch((error) => {
+        console.error(error); // Optional: Handle error responses
+      });
+  };
+
+  const handleChange = (event) => {
+    setQuestion(event.target.value);
+  };
+
   return (
-    <Container fluid style={{ backgroundColor: "#f5f5f5" }}>
-      <Row>
-        {" "}
-        <Col />
-        <Col>
-          <div
-            style={{
-              borderRadius: "20px",
-              marginTop: "100px",
-              marginBottom: "0px",
-              width: "800px",
-              height: "auto",
-              backgroundColor: "#87cefa",
-              border: "1px solid white",
-              textAlign: "center",
-              padding: "20px",
-            }}
-          >
-            <h2>Ask Your question</h2>
-
-            <Form>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-              >
-                <Form.Label>Connect with community</Form.Label>
-                <Form.Control as="textarea" rows={3} type="text" />
-              </Form.Group>
-              <button
-                style={{
-                  padding: "10px",
-                  backgroundColor: "orange",
-                  borderRadius: "10px",
-                  border: "1px solid white",
-                  fontWeight: "bold",
-                  color: "white",
-                }}
-              >
-                Submit
-              </button>
-            </Form>
-          </div>
-          <div
-            style={{
-              overflowY: "scroll",
-              height: "600px",
-              width: "900px",
-              marginBottom: "50px",
-              marginTop: "20px",
-              scrollBehavior: "smooth",
-            }}
-          >
-            <div
-              style={{
-                borderRadius: "20px",
-                marginTop: "30px",
-                width: "800px",
-                height: "100px",
-                backgroundColor: "#4169e1",
-                border: "1px solid white",
-                textAlign: "center",
-                padding: "30px",
-              }}
-            >
-              <h3 style={{color:'white'}}>What did u learn from this video?</h3>
-            </div>
-            <div
-              style={{
-                textAlign: "center",
-                marginLeft: "20px",
-                marginTop: "10px",
-              }}
-            >
-              <div
-                style={{
-                  borderRadius: "20px",
-                  marginTop: "0px",
-                  width: "750px",
-                  height: "500px",
-                  backgroundColor: "gray",
-                  border: "1px solid white",
-                }}
-              >
-                Answer
-              </div>
-            </div>
-          </div>
-        </Col>
-        <Col style={{ marginTop: "20%" }}> {<Vediocall />}</Col>
-      </Row>
-    </Container>
+    <div>
+      <form>
+        <h2>Ask your question</h2>
+        <input
+          type="text"
+          placeholder="Question"
+          value={question}
+          onChange={handleChange}
+        />
+        <button onClick={handleSubmit}>Submit</button>
+      </form>
+    </div>
   );
-};
+}
 
 export default Discussion;
- 

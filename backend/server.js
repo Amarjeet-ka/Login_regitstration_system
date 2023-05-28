@@ -1,26 +1,44 @@
 const express = require('express');
 const app = express();
-// const ejs = require("ejs");
-// const bodyParser = require("body-parser");
- const connectdatabase = require('./config/database.js');
-// const apiRouter = require('./routes/gridimage.js');
-// const apiRouter2 = require('./routes/top_collection.js');
+const apiRouter = require('./routes/discussion_form.js');
+const connectdatabase = require('./config/database.js');
+const { default: mongoose } = require('mongoose');
 
-// // Calling database connection
  connectdatabase;
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.set("view engine", "ejs");
-// app.set("views", "./views");
+ // Parse JSON request bodies
+app.use(express.json());
 
-// app.get("/", function(req, res) {
-//   res.render("index");
-// });
+// Create a schema for the question
+const questionSchema = new mongoose.Schema({
+  question: String,
+});
 
-// app.use('/api', apiRouter);
-// app.use('/api', apiRouter2);
+// Create a model based on the schema
+const Question = mongoose.model("Question", questionSchema);
+
+// Parse JSON request bodies
+app.use(express.json());
+
+// Endpoint to handle the submitQuestion POST request
+app.post("/api/submitQuestion", (req, res) => {
+  const { question } = req.body;
+
+  // Create a new question document
+  const newQuestion = new Question({ question });
+
+  // Save the question to the database
+  newQuestion.save()
+    .then(() => {
+      // Send a response back to the client
+      res.json({ message: "Question submitted successfully" });
+    })
+    .catch((error) => {
+      console.error("Failed to save question:", error);
+      res.status(500).json({ error: "Failed to save question" });
+    });
+});
 
 const port = process.env.PORT || 5000;
 
