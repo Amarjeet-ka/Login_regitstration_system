@@ -19,8 +19,8 @@ const Discussion = () => {
               marginBottom:'0px',
               width: "800px",
               height: "auto",
-              backgroundColor: "lightblue",
-              border: "1px solid black",
+              backgroundColor: "#87cefa",
+              border: "1px solid white",
               textAlign: "center",
               padding: "20px",
             }}
@@ -35,7 +35,7 @@ const Discussion = () => {
                 <Form.Label>Connect with community</Form.Label>
                 <Form.Control as="textarea" rows={3} type="text" />
               </Form.Group>
-              <button>Submit</button>
+              <button style={{padding:'10px',backgroundColor:'orange',borderRadius:'10px',border:'1px solid white',fontWeight:'bold',color:'white'}}>Submit</button>
             </Form>
           </div>
           <div
@@ -54,7 +54,7 @@ const Discussion = () => {
                 marginTop: "30px",
                 width: "800px",
                 height: "100px",
-                backgroundColor: "lightblue",
+                backgroundColor: "#4169e1",
                 border: "1px solid black",
                 textAlign: "center",
                 padding: "20px",
@@ -84,7 +84,7 @@ const Discussion = () => {
             </div>
           </div>
         </Col>
-        <Col>{<Vediocall />}</Col>
+        <Col style={{marginTop:'20%'}}> {<Vediocall />}</Col>
       </Row>
     </Container>
   );

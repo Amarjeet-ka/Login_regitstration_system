@@ -4,7 +4,13 @@ import Navbar from "react-bootstrap/Navbar";
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" fixed="top" variant="dark">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      fixed="top"
+      variant="dark"
+      style={{ backgroundColor: "#1e90ff" }}
+    >
       <Container>
         <Navbar.Brand href="/home">Empower Education</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

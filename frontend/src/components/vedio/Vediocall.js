@@ -8,8 +8,9 @@ import ReactPlayer from "react-player";
 
 function ParticipantView(props) {
   const micRef = useRef(null);
-  const { webcamStream, micStream, webcamOn, micOn, isLocal,  } =
-    useParticipant(props.participantId);
+  const { webcamStream, micStream, webcamOn, micOn, isLocal } = useParticipant(
+    props.participantId
+  );
 
   const videoStream = useMemo(() => {
     if (webcamOn && webcamStream) {
@@ -60,52 +61,63 @@ function ParticipantView(props) {
   );
 }
 function MeetingView() {
-const [joined, setJoined] = useState(null);
-//Get the method which will be used to join the meeting.
-//We will also get the participants list to display all participants
-const { join, participants } = useMeeting({
-  //callback for when meeting is joined successfully
-  onMeetingJoined: () => {
-    setJoined("JOINED");
-  }
-});
-const joinMeeting = () => {
-  setJoined("JOINING");
-  join();
-};
+  const [joined, setJoined] = useState(null);
+  //Get the method which will be used to join the meeting.
+  //We will also get the participants list to display all participants
+  const { join, participants } = useMeeting({
+    //callback for when meeting is joined successfully
+    onMeetingJoined: () => {
+      setJoined("JOINED");
+    },
+  });
+  const joinMeeting = () => {
+    setJoined("JOINING");
+    join();
+  };
 
-return (
-  <div className="container">
-    {joined && joined === "JOINED" ? (
-      <div>
-        {[...participants.keys()].map((participantId) => (
-          <ParticipantView
-            participantId={participantId}
-            key={participantId}
-          />
-        ))}
-      </div>
-    ) : joined && joined === "JOINING" ? (
-      <p>Joining the meeting...</p>
-    ) : (
-      <button onClick={joinMeeting}>Join the meeting</button>
-    )}
-  </div>
-);
+  return (
+    <div className="container">
+      {joined && joined === "JOINED" ? (
+        <div>
+          {[...participants.keys()].map((participantId) => (
+            <ParticipantView
+              participantId={participantId}
+              key={participantId}
+            />
+          ))}
+        </div>
+      ) : joined && joined === "JOINING" ? (
+        <p>Joining the meeting...</p>
+      ) : (
+        <button
+          onClick={joinMeeting}
+          style={{
+            backgroundColor: "red",
+            color: "white",
+            border: "1px solid white",
+            borderRadius: "10px",
+            padding: "10px",
+          }}
+        >
+          Join the meeting
+        </button>
+      )}
+    </div>
+  );
 }
 const Vediocall = () => {
- return (
-  <MeetingProvider
-  config={{
-    meetingId: "sxzd-wz8p-bnvh",
-    micEnabled: true,
-    webcamEnabled: true,
-    name: "TheAmarYT's Org",
-  }}
-  token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiJmNmQyODJmYS0wNGU3LTRmYWEtYjVjNS1mMWQwYTdlZDdhMjgiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTY4NTE4MTcwOSwiZXhwIjoxNjg1MjY4MTA5fQ.mtFdHyGK4NFIfybRc6-l62Ns6yOKEFq_nQEWl641pVM"
->
-  <MeetingView />
-</MeetingProvider>
- )
+  return (
+    <MeetingProvider
+      config={{
+        meetingId: "sxzd-wz8p-bnvh",
+        micEnabled: true,
+        webcamEnabled: true,
+        name: "TheAmarYT's Org",
+      }}
+      token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiJmNmQyODJmYS0wNGU3LTRmYWEtYjVjNS1mMWQwYTdlZDdhMjgiLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTY4NTE4MTcwOSwiZXhwIjoxNjg1MjY4MTA5fQ.mtFdHyGK4NFIfybRc6-l62Ns6yOKEFq_nQEWl641pVM"
+    >
+      <MeetingView />
+    </MeetingProvider>
+  );
 };
 export default Vediocall;
