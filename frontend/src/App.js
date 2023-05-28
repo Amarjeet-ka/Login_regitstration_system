@@ -4,6 +4,8 @@ import Login from './pages/Login';
 import Community from './pages/Community';
 import Resourse from './pages/Resourse';
 import Skill from './pages/Skill';
+import Career from './pages/Career';
+import Personal from './pages/Personal';
 
 
 
@@ -16,6 +18,8 @@ function App() {
     <Route path='/community' element={<Community/>} />
     <Route path='/resource' element={<Resourse/>} />
     <Route path='/skills' element={<Skill/>} />
+    <Route path='/career' element={<Career/>} />
+    <Route path='/personal' element={<Personal/>} />
    </Routes>
    </BrowserRouter>
   );

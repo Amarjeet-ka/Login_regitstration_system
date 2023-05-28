@@ -52,6 +52,30 @@ const Homegrid = () => {
         Skill development
           </a>
         </li>
+        <li>
+          <a
+            href="/career"
+            style={{
+              color: 'blue',
+              textDecoration: 'none',
+              fontSize: '14px',
+            }}
+          >
+        Career Exploration
+          </a>
+        </li>
+        <li>
+          <a
+            href="/personal"
+            style={{
+              color: 'blue',
+              textDecoration: 'none',
+              fontSize: '14px',
+            }}
+          >
+        Personalized learning
+          </a>
+        </li>
       </ul>
     </div>
   );

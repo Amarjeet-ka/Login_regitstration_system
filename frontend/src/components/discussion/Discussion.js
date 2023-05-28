@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 
 const Discussion = () => {
   return (
-    <Container  fluid style={{backgroundColor:"#f5f5f5"}}  >
+    <Container fluid style={{ backgroundColor: "#f5f5f5" }}>
       <Row>
         {" "}
         <Col />
@@ -16,7 +16,7 @@ const Discussion = () => {
             style={{
               borderRadius: "20px",
               marginTop: "100px",
-              marginBottom:'0px',
+              marginBottom: "0px",
               width: "800px",
               height: "auto",
               backgroundColor: "#87cefa",
@@ -35,19 +35,30 @@ const Discussion = () => {
                 <Form.Label>Connect with community</Form.Label>
                 <Form.Control as="textarea" rows={3} type="text" />
               </Form.Group>
-              <button style={{padding:'10px',backgroundColor:'orange',borderRadius:'10px',border:'1px solid white',fontWeight:'bold',color:'white'}}>Submit</button>
+              <button
+                style={{
+                  padding: "10px",
+                  backgroundColor: "orange",
+                  borderRadius: "10px",
+                  border: "1px solid white",
+                  fontWeight: "bold",
+                  color: "white",
+                }}
+              >
+                Submit
+              </button>
             </Form>
           </div>
           <div
-      style={{
-        overflowY: 'scroll',
-        height: '600px',
-        width: '900px',
-        marginBottom: '50px',
-        marginTop: '20px',
-        scrollBehavior: 'smooth',
-      }}
-    >
+            style={{
+              overflowY: "scroll",
+              height: "600px",
+              width: "900px",
+              marginBottom: "50px",
+              marginTop: "20px",
+              scrollBehavior: "smooth",
+            }}
+          >
             <div
               style={{
                 borderRadius: "20px",
@@ -55,12 +66,12 @@ const Discussion = () => {
                 width: "800px",
                 height: "100px",
                 backgroundColor: "#4169e1",
-                border: "1px solid black",
+                border: "1px solid white",
                 textAlign: "center",
                 padding: "20px",
               }}
             >
-              <h3>What is your favorite color?</h3>
+              <h3>What did u learn from this video?</h3>
             </div>
             <div
               style={{
@@ -76,7 +87,7 @@ const Discussion = () => {
                   width: "750px",
                   height: "500px",
                   backgroundColor: "gray",
-                  border: "1px solid black",
+                  border: "1px solid white",
                 }}
               >
                 Answer
@@ -84,7 +95,7 @@ const Discussion = () => {
             </div>
           </div>
         </Col>
-        <Col style={{marginTop:'20%'}}> {<Vediocall />}</Col>
+        <Col style={{ marginTop: "20%" }}> {<Vediocall />}</Col>
       </Row>
     </Container>
   );
