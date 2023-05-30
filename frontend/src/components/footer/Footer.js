@@ -57,16 +57,7 @@ export default function Footer() {
                   React
                 </a>
               </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Vue
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Laravel
-                </a>
-              </p>
+               
             </MDBCol>
 
             <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
@@ -76,21 +67,7 @@ export default function Footer() {
                   Pricing
                 </a>
               </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Settings
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Orders
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Help
-                </a>
-              </p>
+            
             </MDBCol>
 
             <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
@@ -99,16 +76,7 @@ export default function Footer() {
                 <MDBIcon icon="home" className="me-2" />
                 New York, NY 10012, US
               </p>
-              <p>
-                <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
-              </p>
-              <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
-              </p>
-              <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
-              </p>
+           
             </MDBCol>
           </MDBRow>
         </MDBContainer>
@@ -116,8 +84,8 @@ export default function Footer() {
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)',color:'black' }}>
         © 2021 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+        <a className='text-reset fw-bold' href='https://EmpowerEducation.com/'>
+          EmpowerEducation.com
         </a>
       </div>
     </MDBFooter>
