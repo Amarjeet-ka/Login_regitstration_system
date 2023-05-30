@@ -11,6 +11,7 @@
     "@videosdk.live/react-sdk": "^0.1.73",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "mdb-react-ui-kit": "^6.1.0",
     "node-fetch": "^3.3.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",

@@ -1,10 +1,18 @@
 import React from "react";
 import Alert from "react-bootstrap/Alert";
 import { FaArrowRight } from "react-icons/fa";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import w from '../assets/wll.jpg';
+import './Homegrid.css'
 
 const Homegrid = () => {
   return (
-    <div
+   <Container>
+    <Row style={{textAlign:'center'}}>
+      <Col>
+      <div
       style={{
         textAlign: "center",
         marginLeft: "10%",
@@ -18,6 +26,7 @@ const Homegrid = () => {
         borderRadius: "15px",
         backgroundColor: "#ff9e01",
         padding: "20px",
+        marginBottom:'50px'
       }}
     >
    <Alert style={{ backgroundColor: "#43b3fb" }}>
@@ -96,6 +105,13 @@ const Homegrid = () => {
         </li>
       </Alert>
     </div>
+      </Col>
+      <Col>
+       <img className="image-h" src={w} height={300} alt="figure not found" />
+       <h2 className="image-text">Empower Your Career</h2>
+      </Col>
+    </Row>
+   </Container>
   );
 };
 
