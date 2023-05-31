@@ -9,17 +9,17 @@ function Navigation() {
       expand="lg"
       fixed="top"
       variant="dark"
-      bg="dark"
-      style={{ backgroundColor: "#1e90ff" }}
+  
+      style={{ backgroundColor: "#051537" }}
     >
       <Container>
-        <Navbar.Brand href="/home">Empower Education</Navbar.Brand>
+        <Navbar.Brand style={{fontSize:'26px'}} href="/home">Empower Education</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse  >
           <Nav className="me-auto" ></Nav>
           <Nav>
             <Nav.Link className="links-side" href="#deets">About</Nav.Link>
-            <Nav.Link className="links-side" href="/community">Community</Nav.Link>
+          
             <Nav.Link className="links-side"  eventKey={2} href="#memes">
               Contact us
             </Nav.Link>

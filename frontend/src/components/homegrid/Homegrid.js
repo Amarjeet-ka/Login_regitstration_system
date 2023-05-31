@@ -29,7 +29,7 @@ const Homegrid = () => {
         marginBottom:'50px'
       }}
     >
-   <Alert style={{ backgroundColor: "#43b3fb" }}>
+   <Alert style={{ backgroundColor: "#1fa9b3" }}>
         <li>
           <a
             href="/community"
@@ -59,7 +59,7 @@ const Homegrid = () => {
         </li>
       </Alert>
 
-      <Alert style={{ backgroundColor: "#43b3fb" }}>
+      <Alert style={{ backgroundColor: "#1fa9b3" }}>
         <li>
           <a
             href="/skills"
@@ -89,7 +89,7 @@ const Homegrid = () => {
         </li>
       </Alert>
 
-      <Alert style={{ backgroundColor: "#43b3fb" }}>
+      <Alert style={{ backgroundColor: "#1fa9b3" }}>
         <li>
           <a
             href="/personal"
