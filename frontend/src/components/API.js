@@ -1,31 +1,20 @@
-import fetch from 'node-fetch';
+import React,{useState,useCallback} from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const authToken = "248e58c7-09cd-4182-9e02-37f780ab493c";
+ const API = ()=> {
 
-// API call to create meeting
-export const createMeeting = async () => {
-  const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
-    method: "POST",
-    headers: {
-      authorization: `${authToken}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({}),
-  });
+   const [value,setValue] = useState();
+   const navigate = useNavigate()
 
-  const { roomId } = await res.json();
-  return roomId;
-};
+   const handleroomjoin = useCallback(() =>{
+     navigate(`/room/${value}`)
+   },[ navigate,value]);
 
-const options = {
-  method: "GET",
-  headers: {
-    "Authorization": authToken,
-    "Content-Type": "application/json",
-  },
-};
-
-const url = `https://api.videosdk.live/v2/rooms?page=1&perPage=20`;
-const response = await fetch(url, options);
-const data = await response.json();
-console.log(data);
+  return (
+    <div><input type='text'  value={value} onChange={e =>setValue(e.target.value)}  placeholder='Enter Room code'  /> 
+        <button  onClick={handleroomjoin}>Join</button>
+    </div>
+     
+  )
+}
+export default API;

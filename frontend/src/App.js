@@ -8,6 +8,7 @@ import Personal from "./pages/Personal";
 import Resourse from "./pages/Resourse";
 import Tutorials from "./pages/Tutorials";
 import Courses from "./pages/Courses";
+import Roompage from "./components/room";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <Route path="/resource" element={<Resourse/>} />
        <Route path="/tutorials" element={<Tutorials/>}/>
        <Route path="/course" element={<Courses/>}/>
-
+     <Route path="/room/:roomId"  element={<Roompage/>} />
         </Routes>
         </Router>
   );
