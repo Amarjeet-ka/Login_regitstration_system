@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import com from '../components/assets/wlp.jpg';
+import com from '../components/assets/com.jpg';
 
 const API = () => {
   const [value, setValue] = useState('');
@@ -33,16 +33,17 @@ const API = () => {
   const buttonStyle = {
     padding: '10px 20px',
     fontSize: '16px',
-    backgroundColor: 'lightblue',
+    backgroundColor: 'lightgreen',
+    borderRadius:'5px',
     border: 'none',
     cursor: 'pointer',
   };
 
   return (
     <Container fluid style={containerStyle}>
-      <Row> <Col> Colloborate with our community </Col>
+      <Row> <Col style={{fontSize:'70px',color :'white', fontWeight:'bold'}} >   Colloborate with our community </Col>
         <Col>
-          <div>
+          <div> <h1 style={{fontSize:'30px',color:'gray',marginTop:"20%"}}>Create/Join Room </h1>
             <input type="text" value={value} onChange={(e) => setValue(e.target.value)} style={inputStyle} placeholder="Enter Room code" />
             <button onClick={handleRoomJoin} style={buttonStyle}>Join</button>
           </div>
